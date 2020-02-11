@@ -1,6 +1,6 @@
-$uri = "http://<RADARRADDRESS>/api/movie #URL to RADARR MOVIE LIST
+$uri = "http://<RADARRADDRESS>/api/movie" #URL to RADARR MOVIE LIST
 
-$uriP = "http://<RADARRADDRESS>/api/movie"#same for another pull
+$uriP = "http://<RADARRADDRESS>/api/movie" #same for another pull
 
 $apiKEY = "<API KEY" #YOUR API KEY NOTE: RADARR > SETTINGS > GENERAL TAB
 
