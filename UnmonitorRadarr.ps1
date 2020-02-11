@@ -1,4 +1,4 @@
-$uri = "https://urldefense.proofpoint.com/v2/url?u=http-3A__localhost-3A7878_api_movie-2522-23VALID&d=DwIGaQ&c=9g4MJkl2VjLjS6R4ei18BA&r=g6u22jQsyopSe3dngu6XKPR4OQfBviL-SPDa_Vgzhew&m=Oygs0T9n_uExyNuVniHhsKzraq6eOO-jTkxGjqApAlg&s=gYlpTkDtWaC2CVe3ifNJD8XZ0RuXnQc-keKKFxRhVvQ&e=  URL to RADARR MOVIE LIST
+$uri = "http://<RADARRADDRESS>/api/movie #URL to RADARR MOVIE LIST
 
 $uriP = "http://<RADARRADDRESS>/api/movie"#same for another pull
 
@@ -15,7 +15,7 @@ $SetID = $GetJSON | ? {$_.monitored -eq "True" -and $_.hasFile -eq "True"} | Sel
 #Takes each ID found from SETID and assigns to movies ID number to $movie
 foreach($movie in $SetID){
 
-$uriP = "https://urldefense.proofpoint.com/v2/url?u=http-3A__localhost-3A7878_api_movie_-24movie&d=DwIGaQ&c=9g4MJkl2VjLjS6R4ei18BA&r=g6u22jQsyopSe3dngu6XKPR4OQfBviL-SPDa_Vgzhew&m=Oygs0T9n_uExyNuVniHhsKzraq6eOO-jTkxGjqApAlg&s=ULy4R7lDakUajhI-ilzBhaYrsXIHSFc8v6Li6kJgo4E&e= " #pulls JSON data for individaul movie  and conversts to PSOBJECT
+$uriP = "http://<RADARRADDRESS>/api/movie/$movie" #pulls JSON data for individaul movie  and conversts to PSOBJECT
 
 $Movieobject = (Invoke-WebRequest -Uri $uriP -Headers $Headers).Content | ConvertFrom-Json
 
